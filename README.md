@@ -57,12 +57,6 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
 ```
-### Project Structure
-
-Ensure your project directory has the following structure: <br>
-
-
-
 
 ### Building the Docker Image
 
