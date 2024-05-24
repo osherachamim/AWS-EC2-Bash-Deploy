@@ -52,9 +52,6 @@ RUN cp -r /tmp/static-html/* /usr/share/nginx/html/
 # Clean up the temporary files
 RUN rm -rf /tmp/static-html
 
-# Copy the static website files to the Nginx web directory
-COPY ./carvilla /usr/share/nginx/html
-
 # Expose port 80
 EXPOSE 80
 
@@ -68,7 +65,7 @@ CMD ["nginx", "-g", "daemon off;"]
 Navigate to the project root directory in your terminal and run the following command to build the Docker image:
 
 ```
-docker build -t my-static-website
+docker build -t my-static-website .
 ```
 Running the Docker Container <br>
 After building the image, you can run it with the following command:
