@@ -1,5 +1,5 @@
 # Deploying Static Website on AWS EC2 with Docker
-Hosting static website on aws EC2 Instance with Docker Container
+As part of my DevOps engineer journey, I've created this project to enhance my Linux skills. This repository serves as a comprehensive guide and toolkit for hosting static websites on AWS EC2 instances using Docker containers. Whether you're a beginner exploring the fundamentals of web hosting or an experienced developer seeking efficient deployment strategies, this repository provides practical insights and solutions tailored to your needs.
 
 # Static Website Hosting with Nginx
 
