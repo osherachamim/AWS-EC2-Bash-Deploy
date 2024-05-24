@@ -16,34 +16,29 @@ Follow these instructions to build and run your Docker container.
 
 ### Prerequisites
 
-- Docker installed on your local machine. You can download it from [Docker's official website](https://www.docker.com/get-started).
+
+Create a Security Group on AWS EC2 : Allow port 80 (http) and 22 (ssh) inbound rule <br>
+Create an EC2 Instance using below provision shell script
 
 ### Project Structure
 
 Ensure your project directory has the following structure: <br>
 
-project-root/
-│
-├── your-website/
-│ ├── index.html
-│ ├── styles.css
-│ └── script.js
-│
-└── Dockerfile
+
 
 
 ### Building the Docker Image
 
 Navigate to the project root directory in your terminal and run the following command to build the Docker image:
 
-
+```
 docker build -t my-static-website
-'''
-Running the Docker Container
+```
+Running the Docker Container <br>
 After building the image, you can run it with the following command:
-
+```
 docker run -d -p 80:80 --name static-website-container my-static-website
-
+```
 The -d flag runs the container in detached mode.
 The -p 80:80 flag maps port 80 on the host to port 80 on the container.
 --name static-website-container assigns a name to the running container
@@ -53,14 +48,19 @@ Open your web browser and navigate to http://localhost to see your static websit
 
 ### Stopping the Container
 To stop the running container, use the following command:
-
+```
 docker stop static-website-container
+```
 ## Removing the Container
-To remove the stopped container, use the following command:
+To remove the stopped container, use the following command: <br>
+```
+docker rm static-website-container
+```
+
+## Acknowledgments
+Nginx - A high-performance HTTP server and reverse proxy. <br>
+Docker - An open platform for developing, shipping, and running applications
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details
 
-## Acknowledgments
-Nginx - A high-performance HTTP server and reverse proxy.
-Docker - An open platform for developing, shipping, and running applications
