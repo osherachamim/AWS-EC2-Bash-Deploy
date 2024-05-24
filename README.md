@@ -18,7 +18,7 @@ Follow these instructions to build and run your Docker container.
 
 
 1.Create a Security Group on AWS EC2 : Allow port 80 (http) and 22 (ssh) inbound rule <br>
-2.Create an EC2 Instance using below provision shell script
+2.Use Amazon Linux Base Image
 
 ## Dockerfile
 
