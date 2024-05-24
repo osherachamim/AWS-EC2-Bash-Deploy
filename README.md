@@ -32,6 +32,11 @@ LABEL maintainer="osherachamim@osherachamim.com"
 # Set environment variables
 ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
 
+# Update packages and install necessary tools
+RUN yum update -y && \
+    yum install -y wget unzip nginx && \
+    yum clean all
+
 # Create a temporary directory for downloading the ZIP file
 RUN mkdir -p /tmp/static-html
 
