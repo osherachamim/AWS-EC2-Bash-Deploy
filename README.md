@@ -95,5 +95,5 @@ Nginx - A high-performance HTTP server and reverse proxy. <br>
 Docker - An open platform for developing, shipping, and running applications
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see the [MIT](https://choosealicense.com/licenses/mit/) file for details
 
