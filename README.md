@@ -70,12 +70,12 @@ After building the image, you can run it with the following command:
 ```
 docker run -d -p 80:80 --name static-website-container my-static-website
 ```
-The -d flag runs the container in detached mode.
-The -p 80:80 flag maps port 80 on the host to port 80 on the container.
---name static-website-container assigns a name to the running container
+The -d flag runs the container in detached mode. <br>
+The -p 80:80 flag maps port 80 on the host to port 80 on the container. <br>
+--name static-website-container assigns a name to the running container <br>
 
 ### Accessing the Website
-Open your web browser and navigate to http://localhost to see your static website hosted by Nginx.
+Open your web browser and navigate to http://(Public-Ipv4-Of-Ec2) to see your static website hosted by Nginx.
 
 ### Stopping the Container
 To stop the running container, use the following command:
