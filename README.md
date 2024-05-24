@@ -1,4 +1,4 @@
-# Hosting static website on aws EC2 Instance with Docker Container
+# Deploying Static Website on AWS EC2 with Docker
 Hosting static website on aws EC2 Instance with Docker Container
 
 # Static Website Hosting with Nginx
