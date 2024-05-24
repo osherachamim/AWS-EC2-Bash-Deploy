@@ -20,6 +20,43 @@ Follow these instructions to build and run your Docker container.
 Create a Security Group on AWS EC2 : Allow port 80 (http) and 22 (ssh) inbound rule <br>
 Create an EC2 Instance using below provision shell script
 
+## Dockerfile
+
+```
+# Use the official Nginx image from Docker Hub
+FROM nginx:alpine
+
+# Set the maintainer label
+LABEL maintainer="osherachamim@osherachamim.com"
+
+# Set environment variables
+ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
+
+# Create a temporary directory for downloading the ZIP file
+RUN mkdir -p /tmp/static-html
+
+# Download the ZIP file
+RUN wget -O /tmp/static-html/carvilla.zip $ZIP_URL
+
+# Unzip the file
+RUN unzip /tmp/static-html/carvilla.zip -d /tmp/static-html
+
+# Copy the unzipped files to the Nginx HTML directory
+RUN cp -r /tmp/static-html/* /usr/share/nginx/html/
+
+# Clean up the temporary files
+RUN rm -rf /tmp/static-html
+
+# Copy the static website files to the Nginx web directory
+COPY ./carvilla /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
+
+```
 ### Project Structure
 
 Ensure your project directory has the following structure: <br>
