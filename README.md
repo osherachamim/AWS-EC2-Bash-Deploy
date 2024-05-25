@@ -80,12 +80,12 @@ CMD ["nginx", "-g", "daemon off;"]
 Navigate to the project root directory in your terminal and run the following command to build the Docker image:
 
 ```
-docker build -t my-static-website .
+sudo docker build -t my-static-website .
 ```
 ## Running the Docker Container <br>
 After building the image, you can run it with the following command:
 ```
-docker run -d -p 80:80 --name static-website-container my-static-website
+sudo docker run -d -p 80:80 --name static-website-container my-static-website
 ```
 The -d flag runs the container in detached mode. <br>
 The -p 80:80 flag maps port 80 on the host to port 80 on the container. <br>
@@ -97,12 +97,12 @@ Open your web browser and navigate to http://(Public-Ipv4-Of-Ec2) to see your st
 ### Stopping the Container
 To stop the running container, use the following command:
 ```
-docker stop static-website-container
+sudo docker stop static-website-container
 ```
 ## Removing the Container
 To remove the stopped container, use the following command: <br>
 ```
-docker rm static-website-container
+sudo docker rm static-website-container
 ```
 
 ## Acknowledgments
