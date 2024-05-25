@@ -24,7 +24,7 @@ Follow these instructions to build an instance with Website.
 ```
 #!/bin/bash
 # Set environment variables
-ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
+ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
 sudo yum update -y
 sudo yum update -y && yum install -y wget unzip nginx && yum clean all
 sudo systemctl start nginx
