@@ -19,18 +19,26 @@ Follow these instructions to build and run your Docker container.
 
 1.Create a Security Group on AWS EC2 : Allow port 80 (http) and 22 (ssh) inbound rule <br>
 2.Create an EC2 Instance, Use Amazon Linux Base Image. <br>
-## Install Docker and Start Service
-Install Docker Engine
+3.Create an EC2 Instance using below provision shell script:
 ```
+#!/bin/bash
+
+sudo yum update -y
+sudo yum install nginx
+sudo systemctl start nginx
 sudo yum install docker -y
-```
-Start Docker
-```
 sudo systemctl start docker
+
 ```
-Verify that the Docker Engine installation is successful by running the hello-world image.
+## Switch to Root
+
 ```
-sudo docker run hello-world
+sudo su
+```
+
+# Verify that the Docker Engine installation is successful by running the hello-world image.
+```
+docker run hello-world
 ```
 This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits. <br>
 You have now successfully installed and started Docker Engine.
@@ -51,7 +59,6 @@ ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/pa
 RUN yum update -y && yum install -y \
     wget \
     unzip \
-    nginx \
     && yum clean all
 
 # Create a temporary directory for downloading the ZIP file
@@ -82,12 +89,12 @@ CMD ["nginx", "-g", "daemon off;"]
 Navigate to the project root directory in your terminal and run the following command to build the Docker image:
 
 ```
-sudo docker build -t my-static-website .
+docker build -t my-static-website .
 ```
 ## Running the Docker Container <br>
 After building the image, you can run it with the following command:
 ```
-sudo docker run -d -p 80:80 --name static-website-container my-static-website
+docker run -d -p 80:80 --name static-website-container my-static-website
 ```
 The -d flag runs the container in detached mode. <br>
 The -p 80:80 flag maps port 80 on the host to port 80 on the container. <br>
@@ -99,12 +106,12 @@ Open your web browser and navigate to http://(Public-Ipv4-Of-Ec2) to see your st
 ### Stopping the Container
 To stop the running container, use the following command:
 ```
-sudo docker stop static-website-container
+docker stop static-website-container
 ```
 ## Removing the Container
 To remove the stopped container, use the following command: <br>
 ```
-sudo docker rm static-website-container
+docker rm static-website-container
 ```
 
 ## Acknowledgments
