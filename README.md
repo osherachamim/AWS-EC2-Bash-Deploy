@@ -1,5 +1,6 @@
-# Deploying Static Website on AWS EC2 with Docker
-As part of my DevOps engineer journey, I've created this project to enhance my Linux skills. This repository serves as a comprehensive guide and toolkit for hosting static websites on AWS EC2 instances using Docker containers. Whether you're a beginner exploring the fundamentals of web hosting or an experienced developer seeking efficient deployment strategies, this repository provides practical insights and solutions tailored to your needs.
+# Deploying Static Website on AWS EC2 with Bash provisioning
+As part of my DevOps engineer journey, I've created this project to enhance my Linux skills. This repository serves as a comprehensive guide and toolkit for hosting static websites on AWS EC2 instances using Bash script. Whether you're a beginner exploring the fundamentals of web hosting or an experienced developer seeking efficient deployment strategies, this repository provides practical insights and solutions tailored to your needs.
+Provisioning with Bash script involves automating the setup and configuration of software and infrastructure using Bash, a popular Unix shell and scripting language. By writing Bash scripts, DevOps engineers can define the desired state of servers, applications, and environments, enabling efficient and repeatable deployment processes.
 
 # Static Website Hosting with Nginx
 
@@ -7,12 +8,12 @@ In this project, we package a static website into a Docker container using the p
 
 ## Benefits
 
-1. **Ease of Sharing**: Putting your website in a Docker container creates a portable package that can be easily shared with others.
-2. **Deployment Skills**: This project introduces the fundamental skill of deploying web applications in Docker containers, which is essential in modern software development.
+1. **Ease of Sharing**: Putting your website in Nginx folder creates a automation for see the website with a one click
+2. **Deployment Skills**: This project introduces the fundamental skill of deploying web applications with bash scripting , which is essential in modern software development.
 
 ## Getting Started
 
-Follow these instructions to build and run your Docker container.
+Follow these instructions to build an instance with Website.
 
 ### Prerequisites
 
