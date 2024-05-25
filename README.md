@@ -1,5 +1,5 @@
 # Deploying Static Website on AWS EC2 with Bash provisioning
-As part of my DevOps engineer journey, I've created this project to enhance my Linux skills. This repository serves as a comprehensive guide and toolkit for hosting static websites on AWS EC2 instances using Bash script. Whether you're a beginner exploring the fundamentals of web hosting or an experienced developer seeking efficient deployment strategies, this repository provides practical insights and solutions tailored to your needs.
+As part of my DevOps engineer journey, I've created this project to enhance my Linux skills. This repository serves as a comprehensive guide and toolkit for hosting static websites on AWS EC2 instances using Bash script. Whether you're a beginner exploring the fundamentals of web hosting or an experienced developer seeking efficient deployment strategies, this repository provides practical insights and solutions tailored to your needs. <br>
 Provisioning with Bash script involves automating the setup and configuration of software and infrastructure using Bash, a popular Unix shell and scripting language. By writing Bash scripts, DevOps engineers can define the desired state of servers, applications, and environments, enabling efficient and repeatable deployment processes.
 
 # Static Website Hosting with Nginx
