@@ -24,7 +24,7 @@ Follow these instructions to build and run your Docker container.
 #!/bin/bash
 
 sudo yum update -y
-sudo yum install nginx
+sudo yum install nginx -y
 sudo systemctl start nginx
 sudo yum install docker -y
 sudo systemctl start docker
