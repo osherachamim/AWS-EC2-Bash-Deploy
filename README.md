@@ -4,7 +4,7 @@ Provisioning with Bash script involves automating the setup and configuration of
 
 # Static Website Hosting with Nginx
 
-In this project, we package a static website into a Docker container using the powerful Nginx web server. This approach allows us to deploy a collection of HTML, CSS, and JavaScript files in a containerized environment, making the deployment process smooth and efficient.
+In this project, we unzip a static website into the nginx folder using the powerful Bash script tool. This approach allows us to deploy a collection of HTML, CSS, and JavaScript files on EC2 on one click, making the deployment process smooth and efficient.
 
 ## Benefits
 
