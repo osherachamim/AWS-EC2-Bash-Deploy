@@ -68,7 +68,7 @@ Navigate to the project root directory in your terminal and run the following co
 ```
 docker build -t my-static-website .
 ```
-Running the Docker Container <br>
+## Running the Docker Container <br>
 After building the image, you can run it with the following command:
 ```
 docker run -d -p 80:80 --name static-website-container my-static-website
