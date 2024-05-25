@@ -22,19 +22,19 @@ Follow these instructions to build and run your Docker container.
 3.Create an EC2 Instance using below provision shell script:
 ```
 #!/bin/bash
-
+# Set environment variables
+ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
 sudo yum update -y
-sudo yum install nginx -y
+sudo yum update -y && yum install -y wget unzip nginx && yum clean all
 sudo systemctl start nginx
-sudo yum install docker -y
-sudo systemctl start docker
+sudo mkdir -p /tmp/static-html
+sudo wget -O /tmp/static-html/carvilla.zip $ZIP_URL
+sudo unzip /tmp/static-html/carvilla.zip -d /tmp/static-html
+sudo cp -r /tmp/static-html/carvilla-v1.0/* /usr/share/nginx/html/
+sudo rm -rf /tmp/static-html
 
 ```
-## Switch to Root
 
-```
-sudo su
-```
 
 # Verify that the Docker Engine installation is successful by running the hello-world image.
 ```
