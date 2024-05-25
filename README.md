@@ -38,8 +38,8 @@ You have now successfully installed and started Docker Engine.
 ## Dockerfile
 
 ```
-# Use the official Nginx image from Docker Hub
-FROM nginx:alpine
+# Use the official Amazon Linux image as the base
+FROM amazonlinux:latest
 
 # Set the maintainer label
 LABEL maintainer="osherachamim@osherachamim.com"
@@ -47,10 +47,12 @@ LABEL maintainer="osherachamim@osherachamim.com"
 # Set environment variables
 ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
 
-# Update packages and install necessary tools
-RUN yum update -y && \
-    yum install -y wget unzip nginx && \
-    yum clean all
+# Install necessary packages
+RUN yum update -y && yum install -y \
+    wget \
+    unzip \
+    nginx \
+    && yum clean all
 
 # Create a temporary directory for downloading the ZIP file
 RUN mkdir -p /tmp/static-html
