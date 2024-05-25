@@ -36,87 +36,13 @@ sudo rm -rf /tmp/static-html
 ```
 
 
-# Verify that the Docker Engine installation is successful by running the hello-world image.
-```
-docker run hello-world
-```
-This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits. <br>
-You have now successfully installed and started Docker Engine.
-
-## Dockerfile
-
-```
-# Use the official Amazon Linux image as the base
-FROM amazonlinux:latest
-
-# Set the maintainer label
-LABEL maintainer="osherachamim@osherachamim.com"
-
-# Set environment variables
-ENV ZIP_URL=https://www.free-css.com/assets/files/free-css-templates/download/page296/carvilla.zip
-
-# Install necessary packages
-RUN yum update -y && yum install -y \
-    wget \
-    unzip \
-    && yum clean all
-
-# Create a temporary directory for downloading the ZIP file
-RUN mkdir -p /tmp/static-html
-
-# Download the ZIP file
-RUN wget -O /tmp/static-html/carvilla.zip $ZIP_URL
-
-# Unzip the file
-RUN unzip /tmp/static-html/carvilla.zip -d /tmp/static-html
-
-# Copy the unzipped files to the Nginx HTML directory
-RUN cp -r /tmp/static-html/carvilla-v1.0/* /usr/share/nginx/html/
-
-# Clean up the temporary files
-RUN rm -rf /tmp/static-html
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
-
-```
-
-### Building the Docker Image
-
-Navigate to the project root directory in your terminal and run the following command to build the Docker image:
-
-```
-docker build -t my-static-website .
-```
-## Running the Docker Container <br>
-After building the image, you can run it with the following command:
-```
-docker run -d -p 80:80 --name static-website-container my-static-website
-```
-The -d flag runs the container in detached mode. <br>
-The -p 80:80 flag maps port 80 on the host to port 80 on the container. <br>
---name static-website-container assigns a name to the running container <br>
-
 ### Accessing the Website
 Open your web browser and navigate to http://(Public-Ipv4-Of-Ec2) to see your static website hosted by Nginx.
 
-### Stopping the Container
-To stop the running container, use the following command:
-```
-docker stop static-website-container
-```
-## Removing the Container
-To remove the stopped container, use the following command: <br>
-```
-docker rm static-website-container
-```
 
 ## Acknowledgments
 Nginx - A high-performance HTTP server and reverse proxy. <br>
-Docker - An open platform for developing, shipping, and running applications
+
 
 ## License
 This project is licensed under the MIT License - see the [MIT](https://choosealicense.com/licenses/mit/) file for details
