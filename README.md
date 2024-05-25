@@ -19,7 +19,21 @@ Follow these instructions to build and run your Docker container.
 
 1.Create a Security Group on AWS EC2 : Allow port 80 (http) and 22 (ssh) inbound rule <br>
 2.Create an EC2 Instance, Use Amazon Linux Base Image. <br>
-3.Install Docker and Start Service
+## Install Docker and Start Service
+Install Docker Engine
+```
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+Start Docker
+```
+sudo systemctl start docker
+```
+Verify that the Docker Engine installation is successful by running the hello-world image.
+```
+sudo docker run hello-world
+```
+This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits. <br>
+You have now successfully installed and started Docker Engine.
 
 ## Dockerfile
 
