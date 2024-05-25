@@ -64,7 +64,7 @@ RUN wget -O /tmp/static-html/carvilla.zip $ZIP_URL
 RUN unzip /tmp/static-html/carvilla.zip -d /tmp/static-html
 
 # Copy the unzipped files to the Nginx HTML directory
-RUN cp -r /tmp/static-html/* /usr/share/nginx/html/
+RUN cp -r /tmp/static-html/carvilla-v1.0/* /usr/share/nginx/html/
 
 # Clean up the temporary files
 RUN rm -rf /tmp/static-html
