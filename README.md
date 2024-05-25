@@ -22,7 +22,7 @@ Follow these instructions to build and run your Docker container.
 ## Install Docker and Start Service
 Install Docker Engine
 ```
-sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo yum install docker -y
 ```
 Start Docker
 ```
