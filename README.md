@@ -23,11 +23,11 @@ Follow these instructions to build and run your Docker container.
 ```
 #!/bin/bash
 
-yum update -y
-yum install nginx -y
-systemctl start nginx
-yum install docker -y
-systemctl start docker
+sudo yum update -y
+sudo yum install nginx -y
+sudo systemctl start nginx
+sudo yum install docker -y
+sudo systemctl start docker
 
 ```
 ## Switch to Root
